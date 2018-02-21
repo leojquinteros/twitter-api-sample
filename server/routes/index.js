@@ -1,10 +1,9 @@
 'use strict';
 const express = require('express');
 const app = express();
-const api = require('../v0/routes/index');
 
-//API v0 routes
-app.use('/api/v0', api);
+//API routes
+//app.use('/api', api);
 
 app.use((req, res, next) => {
     res.status(404).json({

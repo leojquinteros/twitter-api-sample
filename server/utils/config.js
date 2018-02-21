@@ -8,13 +8,9 @@ const errors = {
         status: 500,
         message: 'Internal error.'
     },
-    userNotFound: {
+    tweetNotFound: {
         status: 404,
         message: 'Tweet not found.'
-    },
-    credentialsMissing: {
-        status: 401,
-        message: 'Authentication credentials missing.'
     }
 };
 

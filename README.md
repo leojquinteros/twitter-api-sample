@@ -1,2 +1,2 @@
 # twitter-api-sample
-Sample API for retrieving/filtering stored twits. Twitter API reference: https://developer.twitter.com/en/docs/api-reference-index
+Sample API for retrieving stored twits from a stream. Streaming API reference: https://www.npmjs.com/package/twitter#streaming-api
