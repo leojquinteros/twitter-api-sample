@@ -1,9 +1,8 @@
 'use strict';
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 const errors = require('../utils/config').errors;
 
-const TweetSchema = Schema({
+const TweetSchema = new mongoose.Schema({
     username: { 
         type: String, 
         required: true
@@ -43,9 +42,9 @@ TweetSchema.statics = {
         });
     },
 
-    retrieve: (query) => {
+    retrieve: (pageSize, query) => {
         return new Promise((resolve, reject) => {
-            Tweet.find(query).select({ 
+            Tweet.find(query).limit(pageSize).select({ 
                 "_id": 0,
                 "username": 1, 
                 "text": 1,

@@ -1,12 +1,8 @@
 'use strict';
 const errors = {
-    missingInput: {
+    invalidPageSize: {
         status: 400,
-        message: 'Missing data'
-    },
-    internalError: {
-        status: 500,
-        message: 'Internal error.'
+        message: 'Invalid page size. Possible values are 30, 50, 100 or leave it blank to retrieve all tweets.'
     },
     tweetNotFound: {
         status: 404,

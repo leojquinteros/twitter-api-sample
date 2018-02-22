@@ -1,6 +1,7 @@
 'use strict';
 const Tweet = require('../models/tweet');
 const errors = require('../utils/config').errors;
+const validator = require('../utils/validation');
 const q = require('../utils/query');
 
 const save = (body) => {
@@ -20,16 +21,18 @@ const save = (body) => {
     });
 }
 
-const retrieve = (username, hashtag, mention) => {
+const retrieve = (pageSize, username, hashtag, mention) => {
     return new Promise((resolve, reject) => {
+        if (!validator.isValid(pageSize)){
+            reject(errors.invalidPageSize);
+        }
         const query = q.build(username, hashtag, mention);
-        Tweet.retrieve(query).then((result) => {
+        Tweet.retrieve(parseInt(pageSize), query).then((result) => {
             if(!result || result.length == 0) {
                 reject(errors.tweetNotFound);
             } else {
                 resolve(result);
             }
-            
         }).catch((err)  => {
             console.log(err);
             reject(err);
