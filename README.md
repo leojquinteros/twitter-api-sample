@@ -18,7 +18,7 @@ $ npm start
 ----
   Retrieve tweets stored in the database.
 
-* **URL** /api/tweets
+* **URL:** /api/tweets
 
 * **Method:** `GET`
   
@@ -37,18 +37,18 @@ $ npm start
     ```json
     [
         {
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit @userMention1",
-            username: "username1",
-            userMentions: [
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit @userMention1",
+            "username": "username1",
+            "userMentions": [
                 "userMention1"
             ],
-            hashtags: []
+            "hashtags": []
         },
         {
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit #hashtag1 #hashtag2",
-            username: "username2",
-            userMentions: [],
-            hashtags: [
+            "text": "Lorem ipsum dolor sit amet #hashtag1 #hashtag2",
+            "username": "username2",
+            "userMentions": [],
+            "hashtags": [
                 "hashtag1",
                 "hashtag2"
             ]
@@ -62,8 +62,8 @@ $ npm start
     **Content:** 
     ```json
     {
-        successful: false,
-        error: "Tweet not found."
+        "successful": false,
+        "error": "Tweet not found."
     }
     ```
 
@@ -73,7 +73,7 @@ $ npm start
     **Content:** 
     ```json
     {
-        successful: false,
-        error: "Invalid page size. Possible values are 30, 50, 100 or leave it blank to retrieve all tweets."
+        "successful": false,
+        "error": "Invalid page size. Possible values are 30, 50, 100 or leave it blank to retrieve all tweets."
     }
     ```
