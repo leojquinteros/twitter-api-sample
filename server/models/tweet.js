@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const errors = require('../utils/config').errors;
 
 const TweetSchema = Schema({
-    text: { 
+    username: { 
         type: String, 
         required: true
     },
-    username: { 
+    text: { 
         type: String, 
         required: true
     },
@@ -45,7 +45,13 @@ TweetSchema.statics = {
 
     retrieve: (query) => {
         return new Promise((resolve, reject) => {
-            Tweet.aggregate(query).then((data) => {
+            Tweet.find(query).select({ 
+                "_id": 0,
+                "username": 1, 
+                "text": 1,
+                "userMentions": 1,
+                "hashtags": 1
+            }).then((data) => {
                 resolve(data);
             }).catch((err) => {
                 reject(err);

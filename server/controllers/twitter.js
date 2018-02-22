@@ -22,7 +22,7 @@ const save = (body) => {
 
 const retrieve = (username, hashtag, mention) => {
     return new Promise((resolve, reject) => {
-        const query = q.buildAggregateQuery(username, hashtag, mention);
+        const query = q.build(username, hashtag, mention);
         Tweet.retrieve(query).then((result) => {
             if(!result || result.length == 0) {
                 reject(errors.tweetNotFound);

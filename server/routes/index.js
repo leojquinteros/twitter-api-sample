@@ -1,9 +1,10 @@
 'use strict';
 const express = require('express');
 const app = express();
+const api = require('./root/api');
 
 //API routes
-//app.use('/api', api);
+app.use('/api', api);
 
 app.use((req, res, next) => {
     res.status(404).json({
