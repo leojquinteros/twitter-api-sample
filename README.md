@@ -1,5 +1,5 @@
 # twitter-api-sample
-Sample API for retrieving stored twits from a stream. Streaming API reference: https://www.npmjs.com/package/twitter#streaming-api
+Sample API for retrieving stored tweets from a stream. Streaming API reference: https://www.npmjs.com/package/twitter#streaming-api
 
 ## Starting MongoDB service
 
@@ -18,7 +18,7 @@ $ npm start
 ----
   Retrieve tweets stored in the database.
 
-* **URL:** /api/tweets
+* **URL:** http://localhost:3000/api/tweets
 
 * **Method:** `GET`
   
@@ -29,7 +29,7 @@ $ npm start
     `mention=[string]` [Filter] A user mention in the tweet. <br />
     `size=[integer]` The page size. Possible values are: 30, 50, 100, or blank for retrieving all.
    
-* **Success Response:**
+* **Success response:**
 
   * **Code:** 200 <br />
     **Content:** 
@@ -56,7 +56,7 @@ $ npm start
     ]
     ```
  
-* **Error Response:**
+* **Other responses:**
 
   * **Code:** 404 Not Found <br />
     **Content:** 
@@ -66,8 +66,6 @@ $ npm start
         "error": "Tweet not found."
     }
     ```
-
-  OR
 
   * **Code:** 400 Bad Request <br />
     **Content:** 
