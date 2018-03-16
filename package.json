@@ -4,6 +4,7 @@
   "description": "Sample API for retrieving/filtering stored twits.",
   "author": "Leonel Quinteros",
   "scripts": {
+    "lint": "standard --fix",
     "start": "nodemon ./bin/www"
   },
   "repository": {
@@ -12,12 +13,11 @@
   },
   "dependencies": {
     "body-parser": "~1.17.1",
-    "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "express": "~4.15.2",
-    "jade": "~1.11.0",
-    "mongoose": "^4.13.2",
+    "mongoose": "^4.10.8",
     "morgan": "~1.8.1",
+    "standard": "^11.0.1",
     "twitter": "^1.7.1",
     "validator": "^9.2.0"
   }

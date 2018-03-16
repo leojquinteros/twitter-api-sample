@@ -1,21 +1,21 @@
-'use strict';
-const express = require('express');
-const app = express();
-const api = require('./root/api');
+'use strict'
+const express = require('express')
+const app = express()
+const api = require('./root/api')
 
-//API routes
-app.use('/api', api);
+// API routes
+app.use('/api', api)
 
 app.use((req, res, next) => {
-    res.status(404).json({
-        message:'Resource not found: ' + req.url 
-    });
-});
+  res.status(404).json({
+    message: 'Resource not found: ' + req.url
+  })
+})
 
 app.use((err, req, res, next) => {
-    res.status(err.status || 500).json({
-        message: err.message
-    });
-});
+  res.status(err.status || 500).json({
+    message: err.message
+  })
+})
 
-module.exports = app;
+module.exports = app
